@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
   handleResponse(data:any){
     this.Token.handle(data.access_token);
-    if(data.user.type_user==='gestionnaire'){
+    if(data.user.role==='gestionnaire'){
    this.router.navigateByUrl('/dashboard');
   }
    else{console.log('vs n etes pas gestionnaire');}

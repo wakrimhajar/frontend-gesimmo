@@ -34,7 +34,10 @@
 
             ],
             "scripts": [
-              
+              "src/assets/js/argon.js",
+              "src/assets/js/argon.min.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery-3.2.1.min.js"
             ]
           },
           "configurations": {

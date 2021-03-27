@@ -1,0 +1,23 @@
+.header {
+  padding-left: 20px;
+}
+.container-fluid {
+  margin-left: 10px;
+}
+.card {
+  padding: 25px;
+}
+.card-header {
+  padding-top: 0%;
+}
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+.row1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.buttons {
+  margin-left: 80%;
+}

@@ -12,4 +12,8 @@ export class LocataireComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    var element = document.getElementById("CloseButton") as any;
+    element.click();
+  }
 }
