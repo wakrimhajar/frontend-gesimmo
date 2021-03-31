@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   public form = {
     email:null,
     password:null,
-    type_user:null
+    role:null
   };
   
   public error=null;

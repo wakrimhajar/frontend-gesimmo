@@ -23,6 +23,8 @@
         </div>
        </div>  
       </div>
+      <div class="container">
+      <div class="p-3 ">
     <div class="container-fluid mt--6">
       <div class="row justify-content-center">
       <div class=" col ">
@@ -32,65 +34,58 @@
       </div>
         
         <!--button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button-->
-      
+        <form method="POST" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
      <div class="card-body">
-      <h5 class="title">Identification du locataire</h5> 
-        <div class="row row1">
-    <div class="col">
+    <div class="text-center"><h5 class="title">Identification du locataire</h5></div>
+
+        <div class="row">
+    <div class="col-md-4 col-sm-12">
       <label for="Civilité" class="form-label"><b>Civilité</b></label>
-      <select class="form-control" aria-label="Default select example" id="Civilité">
+      <select class="form-control"  id="Civilité">
         <option selected>Civilité</option>
         <option value="1">Mlle</option>
         <option value="2">Mdme</option>
         <option value="3">Mr</option>
       </select>
-    </div>
-    <div class="col">
+   
+    
       <label for="Prenom" class="form-label"><b>Prenom</b></label>
-      <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom" id="Prenom">
-    </div>
-    <div class="col">
+      <input type="text" class="form-control" placeholder="Prenom" name="prenom" aria-label="Prenom" id="Prenom" [(ngModel)]="user.prenom">
+   
+    
       <label for="Nom" class="form-label"><b>Nom</b></label>
-      <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" id="Nom">
+      <input type="text" class="form-control" placeholder="Nom" name="nom" aria-label="Nom" id="Nom" [(ngModel)]="user.nom">
     </div>
-  </div>
 
-  <div class="row row1">
-    <div class="col">
+    <div class="col-md-4 col-sm-12">
       <label for="Adresse" class="form-label"><b>Adresse</b></label>
-      <input type="text" class="form-control" placeholder="Adresse" aria-label="Adresse" id="Adresse">
-    </div>
-    <div class="col">
+      <input type="text" class="form-control" placeholder="Adresse" name="adresse" aria-label="Adresse" id="Adresse" [(ngModel)]="user.adresse">
+    
       <label for="Telephone" class="form-label"><b>Telephone</b></label>
-      <input type="text" class="form-control" placeholder="Telephone" aria-label="Telephone" id="Telephone">
-    </div>
-    <div class="col">
+      <input type="text" class="form-control" placeholder="Telephone" name="telephone" aria-label="Telephone" id="Telephone" [(ngModel)]="user.telephone">
+    
+   
       <label for="CIN" class="form-label"><b>N° CIN</b></label>
-     <input type="text" class="form-control" placeholder="N° CIN" aria-label="CIN" id="CIN">
+     <input type="text" class="form-control" placeholder="N° CIN" name="CIN" aria-label="CIN" id="CIN" [(ngModel)]="user.CIN">
    </div>
   </div>
+  <div class="text-center"><h5>Création du compte</h5> </div>
+  <div class="row">
+  <div class="col-md-4 col-sm-12">
 
-  <h5 class="title">Création du compte</h5> 
-  <div class="row row1">
-    
-    <div class="col">
-      <input type="hidden" class="form-control" value="locataire"  aria-label="role">
+      <input type="hidden" class="form-control"  name="role" aria-label="role" [(ngModel)]="user.role">
       <label for="Email" class="form-label"><b>Email</b></label>
-      <input type="Email" class="form-control" placeholder="Email" aria-label="Email" id="Email">
-    </div>
-    <div class="col">
-      <div class="mb-3">
+      <input type="Email" class="form-control" placeholder="Email" name="email" aria-label="Email" id="Email" [(ngModel)]="user.email">
+  
         <label for="password" class="form-label"><b>Mot de passe</b></label>
-        <input class="form-control" type="password" id="password" placeholder="Mot de passe">
-      </div>
-    </div>
-    <div class="col">
-      <div class="mb-3">
+        <input class="form-control" type="password" id="password" name="password" placeholder="Mot de passe" [(ngModel)]="user.password">
+      
         <label for="Image" class="form-label"><b>Image</b></label>
-        <input class="form-control" type="file" id="Image">
-      </div>
+        <input class="form-control" name="image" type="file" id="Image" (change)="imageUpload($event)" [(ngModel)]="user.image">
+      
     </div>
   </div>
+
   <h5 class="title">Documents justificatifs</h5> <span (click)="addForm()" class="btn btn-secondary">+</span>
  <div class="row row1 " *ngFor="let obj of dataarray">
   <div class="col">
@@ -107,16 +102,22 @@
   </div>
   
  </div> 
+ <div class="pull-right">
  <div class="buttons">
  <button type="button" class="btn btn-primary">Annuler</button>
- <button type="button" class="btn btn-success">Enregistrer</button> 
+ <button type="submit" class="btn btn-success">Enregistrer</button> 
 </div>
+</div>
+
     </div>
+  </form>
   </div>
 </div>
   </div>
 
   <app-footer></app-footer>
   </div>
+  </div>
+</div>
 </div> 
 
